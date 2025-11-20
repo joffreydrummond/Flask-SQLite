@@ -1,0 +1,8 @@
+<h2>Search Books by Title</h2>
+
+<form action="/results/booksbytitle" method="POST">
+    {{ form.title_words.label }}<br>
+    {{ form.title_words() }}<br><br>
+
+    <button type="submit">Search</button>
+</form>
