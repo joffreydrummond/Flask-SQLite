@@ -1,0 +1,8 @@
+<h2>Choose a Publisher</h2>
+
+<form action="/results/booksbypublisherid" method="POST">
+    {{ form.publisher_choice.label }}<br>
+    {{ form.publisher_choice() }}<br><br>
+
+    <button type="submit">Search</button>
+</form>
