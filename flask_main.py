@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, url_for, redirect, session
 from string import Template
 from loginwtf import LoginWTF
-from searchwtf import SearchWTF,ByAuthorIdWTF
+from searchwtf import SearchWTF, ByAuthorIdWTF, ByTitleWTF
 from booksdb import BooksDB
 from flask_session import Session
 from flask_bcrypt import Bcrypt
@@ -125,7 +125,8 @@ def search_router(searchtype):
         byauthorform = ByAuthorIdWTF()
         return render_template('byauthor.html', form=byauthorform)
     elif searchtype == 'byTitle':
-        return "You Choose by Title"
+        bytitleform = ByTitleWTF()
+        return render_template('bytitle.html', form=bytitleform)
     elif searchtype == 'byPublisher':
         return "You Choose by Publisher"
 
