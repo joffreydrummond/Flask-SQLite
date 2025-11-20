@@ -144,7 +144,9 @@ def search_results(option=None):
         books = mydb.getbooksbypublisherid(request.form['publisher_choice'])
         return render_template('booksbypublisherid.html', data=books)
     elif option == "booksbytitle":
-        return "Should list books by title"
+        mydb = BooksDB()
+        books = mydb.getbooksbytitle(request.form['title_words'])
+        return render_template('booksbytitle.html', data=books)
 
 
 
